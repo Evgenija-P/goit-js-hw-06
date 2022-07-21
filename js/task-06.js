@@ -16,10 +16,16 @@ const inpLength = document.querySelector(`input[data-length]`);
 textInp.addEventListener("blur", () => {
   const textInpLength = textInp.value.length;
   const textInpLengthData = Number(inpLength.dataset.length);
-  textInpLength >= textInpLengthData
-    ? textInp.classList.add(`valid`)
-    : textInp.classList.add(`invalid`);
+
+  if (textInpLength === textInpLengthData) {
+    textInp.classList.add(`valid`);
+    textInp.classList.remove(`invalid`);
+  } else {
+    textInp.classList.remove(`valid`);
+    textInp.classList.add(`invalid`);
+  }
 
   console.log(textInpLength, textInpLengthData);
   return textInp;
 });
+
