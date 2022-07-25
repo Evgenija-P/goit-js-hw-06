@@ -16,16 +16,24 @@ const ingredients = [
 
 const ulItem = document.querySelector("ul");
 
-const makeLiItems = (ingredient) => {
-  for (let i = 0; i < ingredients.length; i += 1) {
-    const makeLi = document.createElement("li");
-    makeLi.textContent = ingredient;
-    makeLi.classList.add(`item`);
+const elements = ingredients.map((ingredient) => {
+  const makeLi = document.createElement("li");
+  makeLi.textContent = ingredient;
+  makeLi.classList.add(`item`);
 
-    return makeLi;
-  }
-};
+  return makeLi;
+});
 
-const elements = ingredients.map(makeLiItems);
 ulItem.append(...elements);
 console.log(ulItem);
+
+// const elements = ingredients.map(makeLiItems);
+// const makeLiItems = (ingredient) => {
+//   for (let i = 0; i < ingredients.length; i += 1) {
+//     const makeLi = document.createElement("li");
+//     makeLi.textContent = ingredient;
+//     makeLi.classList.add(`item`);
+
+//     return makeLi;
+//   }
+// };

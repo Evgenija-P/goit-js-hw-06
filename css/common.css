@@ -23,15 +23,24 @@ button {
   cursor: pointer;
 }
 
+ul,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
 .gallery {
   display: flex;
 }
-
-.gallery__img {
-  width: 35%;
-  margin-left: 15px;
-}
-
-.gallery__img:first-child {
+.gallery:first-child {
   margin-left: 0;
+}
+.gallery__img {
+  width: 95%;
 }

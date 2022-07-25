@@ -22,17 +22,23 @@ const images = [
 ];
 
 const ulItem = document.querySelector("ul");
+const element = images
+  .map(
+    (image) =>
+      `<li><img src="${image.url}" alt="${image.alt}" class=gallery__img /></li>`
+  )
+  .join("");
 
-const makeImItems = ({ url, alt }) => {
-  for (let i = 0; i < images.length; i += 1) {
-    const makeIm = document.createElement("img");
-    makeIm.src = url;
-    makeIm.alt = alt;
-    makeIm.classList.add(`gallery__img`);
+console.log(element);
+ulItem.insertAdjacentHTML("afterbegin", element);
 
-    return makeIm;
-  }
-};
+// const makeImItems = ({ url, alt }) => {
+//   for (let i = 0; i < images.length; i += 1) {
+//     const makeIm = document.createElement("img");
+//     makeIm.src = url;
+//     makeIm.alt = alt;
+//     makeIm.classList.add(`gallery__img`);
 
-const elements = images.map(makeImItems);
-ulItem.append(...elements);
+//     return makeIm;
+//   }
+// };
